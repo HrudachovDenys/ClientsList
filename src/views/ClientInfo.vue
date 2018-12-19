@@ -4,16 +4,16 @@
             <img class='client__avatar' :src="avatar"/>
 
             <div class='client__info'>
-                <h1 class='info__fullName'>{{ fullName }}</h1>
-                <h4 class='info__job'>{{ job.title }} - {{ job.company }}</h4>
+                <h1>{{ fullName }}</h1>
+                <h4>{{ job }}</h4>
                 <h3>Contacts: </h3>
-                <p class='client__email'>Email: <b>{{ contacts.email }}</b></p>
-                <p class='client__phone'>Phone: <b>{{ contacts.phone }}</b></p>
+                <p>Email: <b>{{ contacts.email }}</b></p>
+                <p>Phone: <b>{{ contacts.phone }}</b></p>
                 <h3>Address: </h3>
-                <p class='client__country'>Country: <b>{{ address.country }}</b></p>
-                <p class='client__city'>City: <b>{{ address.city }}</b></p>
-                <p class='client__street'>Street: <b>{{ address.street }}</b></p>
-                <p class='client__zipCode'>ZipCode: <b>{{ address.zipCode }}</b></p>
+                <p>Country: <b>{{ address.country }}</b></p>
+                <p>City: <b>{{ address.city }}</b></p>
+                <p>Street: <b>{{ address.street }}</b></p>
+                <p>ZipCode: <b>{{ address.zipCode }}</b></p>
             </div>
         </div>
     </div>
@@ -33,10 +33,7 @@ export default {
             return this.client['general'].firstName + ' ' + this.client['general'].lastName;
         },
         job: function() {
-            return {
-                title: this.client['job'].title,
-                company: this.client['job'].company
-            }
+            return this.client['job'].title + ' - ' + this.client['job'].company
         },
         contacts: function() {
             return {
